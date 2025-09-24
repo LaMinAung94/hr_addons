@@ -9,7 +9,6 @@ class Branch(models.Model):
     code  = fields.Char(string='Code',tracking=True)
     name  = fields.Char(string='Name',tracking=True)
     company_id  = fields.Many2one('res.company', string='Company',tracking=True)
-    analytic_account_id  = fields.Many2one('account.analytic.account', string='Analytic Account',tracking=True)
     ssb_office_no = fields.Char(string='SSB Office No',tracking=True)
     ssb_branch_name = fields.Char(string='SSB Branch Name',tracking=True)
     ssb_office_address = fields.Char(string='SSB Office Address',tracking=True)
