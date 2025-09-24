@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="view_attendance_tree_geo_html" model="ir.ui.view">
+        <field name="name">hr.attendance.tree.geo.html</field>
+        <field name="model">hr.attendance</field>
+        <field name="priority" eval="97"/>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+          <xpath expr="//field[@name='check_out']" position="after">
+             <field name="geo_access_check_in" class="hr-attendance-base-width"/>
+             <field name="geo_access_check_out" class="hr-attendance-base-width"/>
+          </xpath>
+        </field>
+    </record>
+
+    <record id="hr_attendance_view_form_geo_html" model="ir.ui.view">
+        <field name="name">hr.attendance.form.geo.html</field>
+        <field name="model">hr.attendance</field>
+        <field name="priority" eval="96"/>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+          <xpath expr="//group[3]/group[1]/group[1]" position="inside">
+            <field name="geo_access_check_in"/>
+          </xpath>
+          <xpath expr="//group[3]/group[2]/group[1]" position="inside">
+            <field name="geo_access_check_out"/>
+          </xpath>
+          <xpath expr="//group[3]/group[1]/group[2]" position="inside">
+             <field name="geo_check_in"/>
+             <field name="map_url_check_in"/> 
+          </xpath>
+          <xpath expr="//group[3]/group[2]/group[2]" position="inside">
+             <field name="geo_check_out"/>
+             <field name="map_url_check_out"/>
+          </xpath>
+        </field>
+    </record>
+
+  </data>
+</odoo>
