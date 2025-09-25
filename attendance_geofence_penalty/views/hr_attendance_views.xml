@@ -1,0 +1,15 @@
+<odoo>
+    <record id="view_hr_attendance_form_geo" model="ir.ui.view">
+        <field name="name">hr.attendance.form.geo.custom</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group" position="after">
+                <group string="Geo Information" col="2">
+                    <field name="geo_status"/>
+                    <field name="late_minutes" readonly="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
